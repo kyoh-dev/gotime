@@ -8,19 +8,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "gotime",
 	Short: "Prints the time for a specified location or timezone",
 	Long: `gotime is a simple CLI application that prints the time in a specified timezone or location.
 It can also show the difference in time between two timezones.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(time.Now())
+		fmt.Println(time.Now().Format(time.RFC1123))
 	},
 }
 
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {

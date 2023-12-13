@@ -7,7 +7,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// timezoneCmd represents the timezone command
 var timezoneCmd = &cobra.Command{
 	Use:   "timezone",
 	Short: "Print the current time in a given timezone",
